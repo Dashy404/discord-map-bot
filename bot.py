@@ -1,11 +1,12 @@
 import random
 import discord
 from discord.ext import commands
-
-# -----------------------------
-# ⚠️ REPLACE THIS WITH YOUR BOT TOKEN
 import os
+
 TOKEN = os.getenv("TOKEN")
+
+if TOKEN is None:
+    raise ValueError("DISCORD TOKEN NOT FOUND. Set TOKEN environment variable.")
 
 # -----------------------------
 
@@ -130,3 +131,4 @@ async def resetseries(ctx):
 
 # Run the bot
 bot.run(TOKEN)
+
